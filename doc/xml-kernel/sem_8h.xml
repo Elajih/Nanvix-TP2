@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="sem_8h" kind="file" language="C++">
+    <compoundname>sem.h</compoundname>
+    <innerclass refid="structsemaphore" prot="public">semaphore</innerclass>
+    <innerclass refid="structs__statement" prot="public">s_statement</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sem_8h_1a57200063e0a38852067d6bf593a4022f" prot="public" static="no" mutable="no">
+        <type>PUBLIC <ref refid="structs__statement" kindref="compound">s_statement</ref></type>
+        <definition>PUBLIC s_statement current_semaphores[SEM_SIZE_T]</definition>
+        <argsstring>[SEM_SIZE_T]</argsstring>
+        <name>current_semaphores</name>
+        <briefdescription>
+<para>Active semaphores table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="71" column="1" bodyfile="include/sys/sem.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sem_8h_1a4c037867a290787b136f227f2f3748cb" prot="public" static="no" mutable="no">
+        <type>PUBLIC int</type>
+        <definition>PUBLIC int NB_SEM</definition>
+        <argsstring></argsstring>
+        <name>NB_SEM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="74" column="1" bodyfile="include/sys/sem.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="sem_8h_1aa75bb5d5cefd5cf6c5e67cd9ab9f800a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC <ref refid="structsemaphore" kindref="compound">semaphore</ref></type>
+        <definition>PUBLIC semaphore create</definition>
+        <argsstring>(int n)</argsstring>
+        <name>create</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+<para>Creates semaphore. </para>        </briefdescription>
+        <detaileddescription>
+<para>if n&gt;=0 =&gt; create semaphore and initiate its value with n else is n &lt;0 return a dead semaphore </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="78" column="1" bodyfile="src/kernel/sys/sem.c" bodystart="13" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="sem_8h_1ab945069594f3894cc3b9c763ae096302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC <ref refid="structsemaphore" kindref="compound">semaphore</ref></type>
+        <definition>PUBLIC semaphore down</definition>
+        <argsstring>(semaphore *sem)</argsstring>
+        <name>down</name>
+        <param>
+          <type><ref refid="structsemaphore" kindref="compound">semaphore</ref> *</type>
+          <declname>sem</declname>
+        </param>
+        <briefdescription>
+<para>Tests semaphore value to decrease. </para>        </briefdescription>
+        <detaileddescription>
+<para>if value &gt; 0 it is decremented and the calling process continues to execute normally otherwise the process is blocked on the waiting queue </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="79" column="1" bodyfile="src/kernel/sys/sem.c" bodystart="32" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="sem_8h_1a23b0b59e6548fa4d044a10cd091c963e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC <ref refid="structsemaphore" kindref="compound">semaphore</ref></type>
+        <definition>PUBLIC semaphore up</definition>
+        <argsstring>(semaphore *sem)</argsstring>
+        <name>up</name>
+        <param>
+          <type><ref refid="structsemaphore" kindref="compound">semaphore</ref> *</type>
+          <declname>sem</declname>
+        </param>
+        <briefdescription>
+<para>Tests semaphore value to increase. </para>        </briefdescription>
+        <detaileddescription>
+<para>If the value become positive, we wake up the first process in the waiting queue. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="80" column="1" bodyfile="src/kernel/sys/sem.c" bodystart="47" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="sem_8h_1ae53b5d9b3a5b0d8ca0e6cb4ae79a6bcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PUBLIC <ref refid="structsemaphore" kindref="compound">semaphore</ref></type>
+        <definition>PUBLIC semaphore destroy</definition>
+        <argsstring>(semaphore *sem)</argsstring>
+        <name>destroy</name>
+        <param>
+          <type><ref refid="structsemaphore" kindref="compound">semaphore</ref> *</type>
+          <declname>sem</declname>
+        </param>
+        <briefdescription>
+<para>Destroys the semaphore. </para>        </briefdescription>
+        <detaileddescription>
+<para>we set the vlue and waiting queue of semaphore </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="81" column="1" bodyfile="src/kernel/sys/sem.c" bodystart="60" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="sem_8h_1aba887a20d6c17aa8e5497eda9a387df9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int semget</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>semget</name>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <briefdescription>
+<para>Creates a semaphore. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="86" column="1" bodyfile="src/lib/libc/sys/sem/semget.c" bodystart="26" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="sem_8h_1a0e6abda012cd70ce6907256bc47636e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int semctl</definition>
+        <argsstring>(int, int, int)</argsstring>
+        <name>semctl</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Performs control operations in a semaphore. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="87" column="1" bodyfile="src/lib/libc/sys/sem/semctl.c" bodystart="26" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="sem_8h_1ad19be4e78921e837c6d3a47ce7bb2603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int semop</definition>
+        <argsstring>(int, int)</argsstring>
+        <name>semop</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Performs operations in a semaphore. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="88" column="1" bodyfile="src/lib/libc/sys/sem/semop.c" bodystart="26" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright(C)<sp/>2011-2016<sp/>Pedro<sp/>H.<sp/>Penna<sp/>&lt;pedrohenriquepenna@gmail.com&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>Nanvix.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Nanvix<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>Nanvix.<sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include&lt;<ref refid="const_8h" kindref="compound">nanvix/const.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include&lt;nanvix/config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SEM_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>GETVAL<sp/><sp/><sp/>0<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SETVAL<sp/><sp/><sp/>1<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>IPC_RMID<sp/>3<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SEM_SIZE_T<sp/>PROC_MAX<sp/>//Semaphore&apos;s<sp/>size<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>SEM_EMPTY<sp/>-999<sp/>//semaphore<sp/>value<sp/>when<sp/>emty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#ifndef<sp/>_ASM_FILE_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="structsemaphore" refkind="compound"><highlight class="normal"><sp/>PUBLIC<sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*wait_queue;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/>}<ref refid="structsemaphore" kindref="compound">semaphore</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structs__statement" refkind="compound"><highlight class="normal"><sp/>PUBLIC<sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>sem;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>key;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbp_currents;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/>}<ref refid="structs__statement" kindref="compound">s_statement</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structs__statement" kindref="compound">s_statement</ref><sp/>current_semaphores[SEM_SIZE_T];</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>active<sp/>semaphores<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NB_SEM;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Functions<sp/>to<sp/>edit<sp/>a<sp/>semaphore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>create(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>down(<ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>*sem);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>up(<ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>*sem);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>destroy(<ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>*sem);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Forward<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>semget(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>semctl(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>semop(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>SEM_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="include/sys/sem.h"/>
+  </compounddef>
+</doxygen>

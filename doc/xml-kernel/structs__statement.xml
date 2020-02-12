@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structs__statement" kind="struct" language="C++" prot="public">
+    <compoundname>s_statement</compoundname>
+    <includes local="no">sem.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__statement_1aff60865a657aaa2ee3f0c710782e321f" prot="public" static="no" mutable="no">
+        <type><ref refid="structsemaphore" kindref="compound">semaphore</ref></type>
+        <definition>semaphore sem</definition>
+        <argsstring></argsstring>
+        <name>sem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="60" column="1" bodyfile="include/sys/sem.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structs__statement_1a5391a5e3794cba62090de42419f6c4ba" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="61" column="1" bodyfile="include/sys/sem.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structs__statement_1a195e151302759b69baed3f3a4bdb919d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nbp_currents</definition>
+        <argsstring></argsstring>
+        <name>nbp_currents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/sys/sem.h" line="62" column="1" bodyfile="include/sys/sem.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>semaphore storage </para>    </briefdescription>
+    <detaileddescription>
+<para>composed by : semaphore, a key, number of current process using the semaphore </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="123">
+        <label>inode</label>
+        <link refid="structinode"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="124" relation="usage">
+          <edgelabel>sb</edgelabel>
+        </childnode>
+      </node>
+      <node id="120">
+        <label>s_statement</label>
+        <link refid="structs__statement"/>
+        <childnode refid="121" relation="usage">
+          <edgelabel>sem</edgelabel>
+        </childnode>
+      </node>
+      <node id="122">
+        <label>process</label>
+        <link refid="structprocess"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>pwd</edgelabel>
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>fss</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>next</edgelabel>
+          <edgelabel>pgrp</edgelabel>
+          <edgelabel>chain</edgelabel>
+          <edgelabel>father</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>semaphore</label>
+        <link refid="structsemaphore"/>
+        <childnode refid="122" relation="usage">
+          <edgelabel>wait_queue</edgelabel>
+        </childnode>
+      </node>
+      <node id="126">
+        <label>fpu</label>
+        <link refid="structfpu"/>
+      </node>
+      <node id="125">
+        <label>buffer</label>
+        <link refid="structbuffer"/>
+        <childnode refid="122" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="125" relation="usage">
+          <edgelabel>free_next</edgelabel>
+          <edgelabel>hash_prev</edgelabel>
+          <edgelabel>free_prev</edgelabel>
+          <edgelabel>hash_next</edgelabel>
+        </childnode>
+      </node>
+      <node id="124">
+        <label>superblock</label>
+        <link refid="structsuperblock"/>
+        <childnode refid="123" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>mp</edgelabel>
+        </childnode>
+        <childnode refid="122" relation="usage">
+          <edgelabel>chain</edgelabel>
+        </childnode>
+        <childnode refid="125" relation="usage">
+          <edgelabel>zmap</edgelabel>
+          <edgelabel>imap</edgelabel>
+          <edgelabel>buf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/sys/sem.h" line="59" column="1" bodyfile="include/sys/sem.h" bodystart="59" bodyend="63"/>
+    <listofallmembers>
+      <member refid="structs__statement_1a5391a5e3794cba62090de42419f6c4ba" prot="public" virt="non-virtual"><scope>s_statement</scope><name>key</name></member>
+      <member refid="structs__statement_1a195e151302759b69baed3f3a4bdb919d" prot="public" virt="non-virtual"><scope>s_statement</scope><name>nbp_currents</name></member>
+      <member refid="structs__statement_1aff60865a657aaa2ee3f0c710782e321f" prot="public" virt="non-virtual"><scope>s_statement</scope><name>sem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

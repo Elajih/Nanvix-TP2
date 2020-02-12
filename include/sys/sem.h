@@ -17,6 +17,9 @@
  * along with Nanvix. If not, see <http://www.gnu.org/licenses/>.
  */
 
+ #include<nanvix/const.h>
+ #include<nanvix/config.h>
+
 #ifndef SEM_H_
 #define SEM_H_
 
@@ -30,8 +33,9 @@
 	/**@}*/
 
 	#define SEM_SIZE_T PROC_MAX //Semaphore's size array
+	#define SEM_EMPTY -999 //semaphore value when emty
 
-
+  #ifndef _ASM_FILE_
 	/**
 	*@brief the structure of semaphore
 	*
@@ -83,4 +87,5 @@
 	extern int semctl(int, int, int);
 	extern int semop(int, int);
 
+#endif
 #endif /* SEM_H_ */
