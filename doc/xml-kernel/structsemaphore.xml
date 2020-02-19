@@ -36,80 +36,80 @@
     <detaileddescription>
 <para>composed by : semaphore value ad wainting queue </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="130">
+      <node id="122">
         <label>inode</label>
         <link refid="structinode"/>
-        <childnode refid="130" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>free_next</edgelabel>
           <edgelabel>hash_prev</edgelabel>
           <edgelabel>hash_next</edgelabel>
         </childnode>
-        <childnode refid="129" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>chain</edgelabel>
         </childnode>
-        <childnode refid="131" relation="usage">
+        <childnode refid="123" relation="usage">
           <edgelabel>sb</edgelabel>
         </childnode>
       </node>
-      <node id="129">
+      <node id="121">
         <label>process</label>
         <link refid="structprocess"/>
-        <childnode refid="130" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>root</edgelabel>
           <edgelabel>pwd</edgelabel>
         </childnode>
-        <childnode refid="133" relation="usage">
+        <childnode refid="125" relation="usage">
           <edgelabel>fss</edgelabel>
         </childnode>
-        <childnode refid="129" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>next</edgelabel>
           <edgelabel>pgrp</edgelabel>
           <edgelabel>chain</edgelabel>
           <edgelabel>father</edgelabel>
         </childnode>
       </node>
-      <node id="128">
+      <node id="120">
         <label>semaphore</label>
         <link refid="structsemaphore"/>
-        <childnode refid="129" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>wait_queue</edgelabel>
         </childnode>
       </node>
-      <node id="133">
+      <node id="125">
         <label>fpu</label>
         <link refid="structfpu"/>
       </node>
-      <node id="132">
+      <node id="124">
         <label>buffer</label>
         <link refid="structbuffer"/>
-        <childnode refid="129" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>chain</edgelabel>
         </childnode>
-        <childnode refid="132" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>free_next</edgelabel>
           <edgelabel>hash_prev</edgelabel>
           <edgelabel>free_prev</edgelabel>
           <edgelabel>hash_next</edgelabel>
         </childnode>
       </node>
-      <node id="131">
+      <node id="123">
         <label>superblock</label>
         <link refid="structsuperblock"/>
-        <childnode refid="130" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>root</edgelabel>
           <edgelabel>mp</edgelabel>
         </childnode>
-        <childnode refid="129" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>chain</edgelabel>
         </childnode>
-        <childnode refid="132" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>zmap</edgelabel>
           <edgelabel>imap</edgelabel>
           <edgelabel>buf</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/sys/sem.h" line="46" column="1" bodyfile="include/sys/sem.h" bodystart="46" bodyend="50"/>
+    <location file="include/sys/sem.h" line="46" column="1" bodyfile="include/sys/sem.h" bodystart="46" bodyend="49"/>
     <listofallmembers>
       <member refid="structsemaphore_1ac4f474c82e82cbb89ca7c36dd52be0ed" prot="public" virt="non-virtual"><scope>semaphore</scope><name>value</name></member>
       <member refid="structsemaphore_1a81b95104a1992f413c2d89ffb5625ee2" prot="public" virt="non-virtual"><scope>semaphore</scope><name>wait_queue</name></member>

@@ -46,7 +46,6 @@
  PUBLIC typedef struct {
 	 int value;
 	 struct process *wait_queue;
-
  }semaphore;
 
  /**
@@ -59,16 +58,17 @@
  PUBLIC typedef struct {
 	 semaphore sem;
 	 unsigned key;
-	 int nbp_currents;
- }s_statement;
+	 int npcurrent;
+ }sstorage;
 
 
  /**
 	 * @brief Active semaphores table
+
 	 *
 	**/
 
-	PUBLIC s_statement current_semaphores[SEM_SIZE_T];
+	PUBLIC sstorage semaphoreTab[SEM_SIZE_T];
 
 	// active semaphores number
 	PUBLIC int NB_SEM;

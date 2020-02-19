@@ -3,13 +3,13 @@
   <compounddef id="sem_8h" kind="file" language="C++">
     <compoundname>sem.h</compoundname>
     <innerclass refid="structsemaphore" prot="public">semaphore</innerclass>
-    <innerclass refid="structs__statement" prot="public">s_statement</innerclass>
+    <innerclass refid="structsstorage" prot="public">sstorage</innerclass>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="sem_8h_1a57200063e0a38852067d6bf593a4022f" prot="public" static="no" mutable="no">
-        <type>PUBLIC <ref refid="structs__statement" kindref="compound">s_statement</ref></type>
-        <definition>PUBLIC s_statement current_semaphores[SEM_SIZE_T]</definition>
+      <memberdef kind="variable" id="sem_8h_1ab1e09f2d132ef648b4f23b2dd5aa421d" prot="public" static="no" mutable="no">
+        <type>PUBLIC <ref refid="structsstorage" kindref="compound">sstorage</ref></type>
+        <definition>PUBLIC sstorage semaphoreTab[SEM_SIZE_T]</definition>
         <argsstring>[SEM_SIZE_T]</argsstring>
-        <name>current_semaphores</name>
+        <name>semaphoreTab</name>
         <briefdescription>
 <para>Active semaphores table. </para>        </briefdescription>
         <detaileddescription>
@@ -200,17 +200,16 @@
 <codeline lineno="46" refid="structsemaphore" refkind="compound"><highlight class="normal"><sp/>PUBLIC<sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structprocess" kindref="compound">process</ref><sp/>*wait_queue;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/>}<ref refid="structsemaphore" kindref="compound">semaphore</ref>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59" refid="structs__statement" refkind="compound"><highlight class="normal"><sp/>PUBLIC<sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>sem;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>key;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nbp_currents;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/>}<ref refid="structs__statement" kindref="compound">s_statement</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/>}<ref refid="structsemaphore" kindref="compound">semaphore</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="structsstorage" refkind="compound"><highlight class="normal"><sp/>PUBLIC<sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structsemaphore" kindref="compound">semaphore</ref><sp/>sem;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>key;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>npcurrent;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/>}<ref refid="structsstorage" kindref="compound">sstorage</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structs__statement" kindref="compound">s_statement</ref><sp/>current_semaphores[SEM_SIZE_T];</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/><ref refid="structsstorage" kindref="compound">sstorage</ref><sp/>semaphoreTab[SEM_SIZE_T];</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>active<sp/>semaphores<sp/>number</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>PUBLIC<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NB_SEM;</highlight></codeline>

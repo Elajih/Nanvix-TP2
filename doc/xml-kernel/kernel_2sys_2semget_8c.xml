@@ -44,8 +44,8 @@
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//if<sp/>we<sp/>find<sp/>the<sp/>semaphore<sp/>associated<sp/>to<sp/>the<sp/>our<sp/>key<sp/>we<sp/>return<sp/>the<sp/>key</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//if<sp/>goes<sp/>right<sp/>return<sp/>semaphore<sp/>id</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=0;<sp/>i&lt;NB_SEM;<sp/>i++){</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(current_semaphores[i].key==key){</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current_semaphores[i].nbp_currents++;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(semaphoreTab[i].key==key){</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>semaphoreTab[i].<sp/>npcurrent++;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
@@ -54,9 +54,9 @@
 <codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//if<sp/>not</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//adding<sp/>new<sp/>sepmaphore<sp/>to<sp/>existant<sp/>semaphores</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal">current_semaphores[NB_SEM].sem=create(SEM_EMPTY);</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">current_semaphores[NB_SEM].key=key;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">current_semaphores[NB_SEM].nbp_currents=1;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">semaphoreTab[NB_SEM].sem=create(SEM_EMPTY);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">semaphoreTab[NB_SEM].key=key;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">semaphoreTab[NB_SEM].<sp/>npcurrent=1;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal">NB_SEM<sp/>++;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>

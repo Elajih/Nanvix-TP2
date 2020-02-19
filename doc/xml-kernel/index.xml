@@ -398,14 +398,14 @@
     <member refid="structrequest_1ac3972fb6a46eec5cc3ac14cf2e17d813" kind="variable"><name>buffered</name></member>
     <member refid="structrequest_1aa97502a4d504b270ba49b7492abd304d" kind="variable"><name>u</name></member>
   </compound>
-  <compound refid="structs__statement" kind="struct"><name>s_statement</name>
-    <member refid="structs__statement_1aff60865a657aaa2ee3f0c710782e321f" kind="variable"><name>sem</name></member>
-    <member refid="structs__statement_1a5391a5e3794cba62090de42419f6c4ba" kind="variable"><name>key</name></member>
-    <member refid="structs__statement_1a195e151302759b69baed3f3a4bdb919d" kind="variable"><name>nbp_currents</name></member>
-  </compound>
   <compound refid="structsemaphore" kind="struct"><name>semaphore</name>
     <member refid="structsemaphore_1ac4f474c82e82cbb89ca7c36dd52be0ed" kind="variable"><name>value</name></member>
     <member refid="structsemaphore_1a81b95104a1992f413c2d89ffb5625ee2" kind="variable"><name>wait_queue</name></member>
+  </compound>
+  <compound refid="structsstorage" kind="struct"><name>sstorage</name>
+    <member refid="structsstorage_1aff60865a657aaa2ee3f0c710782e321f" kind="variable"><name>sem</name></member>
+    <member refid="structsstorage_1a5391a5e3794cba62090de42419f6c4ba" kind="variable"><name>key</name></member>
+    <member refid="structsstorage_1a44e0cd3014401d0559a682ac88958d2b" kind="variable"><name>npcurrent</name></member>
   </compound>
   <compound refid="structstat" kind="struct"><name>stat</name>
     <member refid="structstat_1a38914c334b6acaa9e0e94c9d28d590e6" kind="variable"><name>st_dev</name></member>
@@ -1153,7 +1153,7 @@
     <member refid="stropts_8h_1a28db05c84676b387c2d8cfdd317bb9bd" kind="function"><name>ioctl</name></member>
   </compound>
   <compound refid="sem_8h" kind="file"><name>sem.h</name>
-    <member refid="sem_8h_1a57200063e0a38852067d6bf593a4022f" kind="variable"><name>current_semaphores</name></member>
+    <member refid="sem_8h_1ab1e09f2d132ef648b4f23b2dd5aa421d" kind="variable"><name>semaphoreTab</name></member>
     <member refid="sem_8h_1a4c037867a290787b136f227f2f3748cb" kind="variable"><name>NB_SEM</name></member>
     <member refid="sem_8h_1aa75bb5d5cefd5cf6c5e67cd9ab9f800a" kind="function"><name>create</name></member>
     <member refid="sem_8h_1ab945069594f3894cc3b9c763ae096302" kind="function"><name>down</name></member>

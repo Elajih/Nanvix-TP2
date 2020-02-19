@@ -6,19 +6,20 @@
 
 /*
  * Change the semaphore value
- * Decrease ii if op is negative
+ * Decrease it if op is negative
  * Increase it if op is positive
  */
 int sys_semop(int semid, int op){
 
+  semaphore semo=semaphoreTab[semid].sem;
   if(op<0){
 		for (int i=0; i>op; i--)
-			current_semaphores[semid].sem=down(&(current_semaphores[semid].sem));
+		    semo=down(&semo);
 	}
 
 	else if (op>0) {
 		for (int i=0; i<op; i++)
-			current_semaphores[semid].sem=up(&(current_semaphores[semid].sem));
+			semo=up(&semo);
 	}
 
   return 0;

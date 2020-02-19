@@ -988,7 +988,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/nanvix/syscall.h" line="278" column="1" bodyfile="src/kernel/sys/semctl.c" bodystart="9" bodyend="39"/>
+        <location file="include/nanvix/syscall.h" line="278" column="1" bodyfile="src/kernel/sys/semctl.c" bodystart="9" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="syscall_8h_1aebf6b629e253fc12772f3ebd9279e709" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>EXTERN int</type>
@@ -1009,7 +1009,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/nanvix/syscall.h" line="285" column="1" bodyfile="src/kernel/sys/semop.c" bodystart="12" bodyend="25"/>
+        <location file="include/nanvix/syscall.h" line="285" column="1" bodyfile="src/kernel/sys/semop.c" bodystart="12" bodyend="26"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -9,26 +9,27 @@
 int sys_semctl(int semid, int cmd, int val){
   int value=-1;
 
+
 //return current semaphore's value
 if (cmd==GETVAL){
-  value= current_semaphores[semid].sem.value;
+  value= semaphoreTab[semid].sem.value;
 }
 
 //define semaphore's value with val
 else if (cmd==SETVAL){
-  current_semaphores[semid].sem.value=val;
+  semaphoreTab[semid].sem.value=val;
   value=0;
 }
 
 //delete semaphore and destroy it if it isn't used
 else if(cmd==IPC_RMID){
-  if(current_semaphores[semid].nbp_currents==1){
-    current_semaphores[semid].sem=destroy(&(current_semaphores[semid].sem));
-    current_semaphores[semid].nbp_currents=0;
-    current_semaphores[semid].key=SEM_EMPTY;
+  if(semaphoreTab[semid].npcurrent==1){
+    semaphoreTab[semid].sem=destroy(&(semaphoreTab[semid].sem));
+    semaphoreTab[semid].npcurrent=0;
+    semaphoreTab[semid].key=SEM_EMPTY;
   }
   else{
-    current_semaphores[semid].nbp_currents--;
+    semaphoreTab[semid]. npcurrent--;
 }
     value=0;
 }
