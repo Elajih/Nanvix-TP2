@@ -23,7 +23,7 @@ PUBLIC semaphore create(int n){
   return sem;
 }
 
-/**
+/** 
 *@brief Tests semaphore value to decrease
 *@details if value > 0 it is decremented and the calling process continues to execute normally
 * otherwise the process is blocked on the waiting queue

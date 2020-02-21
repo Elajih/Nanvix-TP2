@@ -11,16 +11,16 @@
  */
 int sys_semop(int semid, int op){
 
-  semaphore semo=semaphoreTab[semid].sem;
-  if(op<0){
+  semaphore semo = semaphoreTab[semid].sem;
+  if(op < 0){
 		for (int i=0; i>op; i--)
-		    semo=down(&semo);
+		    semo = down(&semo);
 	}
 
-	else if (op>0) {
+	else if (op > 0) {
 		for (int i=0; i<op; i++)
-			semo=up(&semo);
+			semo = up(&semo);
 	}
-
+  
   return 0;
 }

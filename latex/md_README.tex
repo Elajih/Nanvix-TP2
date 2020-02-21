@@ -1,0 +1,72 @@
+\subsection*{What Is Nanvix}
+
+Nanvix is a Unix-\/like operating system written by \href{https://github.com/ppenna}{\tt Pedro H. Penna} for educational purposes. It is designed to be simple and small, but also modern and fully featured.
+
+\subsection*{What Hardware Is Required?}
+
+Nanvix targets 32-\/bit x86-\/based P\+Cs and only requires a floppy or C\+D-\/\+R\+OM drive and 16 MB of R\+AM. You can run it either in a real PC or in a virtual machine, using a Live System\textquotesingle{}s Image.
+
+\subsection*{Building}
+
+\subsubsection*{Linux-\/like systems}
+
+In order to build Nanvix, you will need a Linux like programming environment, the x86 G\+CC compiler and the x86 G\+NU binutils.
+
+If you are running a Debian-\/based Linux distribution, like Ubuntu, you can simply run the following commands at the root directory\+:
+
+
+\begin{DoxyCode}
+sudo apt-get install make
+sudo bash tools/dev/setup-toolchain.sh
+sudo bash tools/dev/setup-bochs.sh
+sudo reboot now
+\end{DoxyCode}
+
+
+When done, you can build Nanvix by typing, at the root directory\+:
+
+
+\begin{DoxyCode}
+make nanvix
+\end{DoxyCode}
+
+
+Or you can build a Live System\textquotesingle{}s Image by typing, at the same directory\+:
+
+
+\begin{DoxyCode}
+make image
+\end{DoxyCode}
+
+
+\subsubsection*{mac\+OS}
+
+The support of Nanvix on mac\+OS is still experimental. It relies on the Homebrew package manager (\href{https://brew.sh}{\tt https\+://brew.\+sh}), to get the necessary U\+N\+I\+X-\/like packages to build Nanvix.
+
+The general flow for building Nanvix on mac\+OS from the root directory is as follows\+:
+
+
+\begin{DoxyCode}
+bash tools/dev/setup-toolchain.sh
+make TARGET=i386-elf nanvix
+make image
+\end{DoxyCode}
+
+
+Unlike the Linux-\/like systems procedure, this flow does not build bochs from source. Instead, it installs the bochs package using brew. As this package does not come with gdb-\/stubs support, you cannot run Nanvix with {\ttfamily -\/-\/debug} option (see details below).
+
+\subsection*{Running}
+
+To run Nanvix, type the following command at the root directory\+:
+
+
+\begin{DoxyCode}
+bash tools/run/run.sh
+\end{DoxyCode}
+
+
+The script above accepts some optional parameters to configure bochs. Please, run {\ttfamily bash tools/run/run.\+sh -\/-\/help} for more details.
+
+\subsection*{License and Maintainers}
+
+Nanvix is a free software that is under the G\+PL V3 license and is maintained by Pedro H. Penna. Any questions or suggestions send him an email\+: \href{mailto:pedrohenriquepenna@gmail.com}{\tt pedrohenriquepenna@gmail.\+com} 
